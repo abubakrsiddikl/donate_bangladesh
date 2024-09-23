@@ -14,6 +14,9 @@ function getElementByInnerTextById(id) {
   return donationMainBalanceNumber;
 }
 
+// Global variable
+const accountBalance = getElementByInnerTextById("account-balance");
+
 // add donate now button event handeler
 const donateNow1 = document.getElementById("donate-now-1");
 
@@ -27,6 +30,11 @@ donateNow1.addEventListener("click", function () {
     "donation-main-balance"
   );
   const calculateDonateBlance = donationMainBalance + donationAmountInput;
-  const balanceUpdate = document.getElementById('donation-main-balance');
+  const balanceUpdate = document.getElementById("donation-main-balance");
   balanceUpdate.innerText = calculateDonateBlance;
+
+  // account balance decriment
+  const mainAccountBalance = accountBalance - donationAmountInput;
+  const mainAccountBalanceUpdate = document.getElementById("account-balance");
+  mainAccountBalanceUpdate.innerText = mainAccountBalance;
 });
