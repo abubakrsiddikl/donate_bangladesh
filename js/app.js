@@ -96,19 +96,23 @@ if (donateNow1) {
   
     // history functio called
     // 4. parameter was donate card history string
-    const donateInput = document.getElementById('donate-now-input-1');
-    const donateAmount = donateInput.value.trim();
-    // history list
-    const historyList = document.createElement("div");
-    historyList.className =
-      "bg-white p-2 border rounded-2xl border-[rgba(17,17,17,0.100)]";
-    historyList.innerHTML = `
-          <p class = "text-xl font-bold">${donateAmount} ${donateCardHistory1}</p>
-          <p>Date : ${new Date()}
+    // const donateInput = document.getElementById('donate-now-input-1');
+    // const donateAmount = donateInput.value.trim();
+    // // history list
+    // const historyList = document.createElement("div");
+    // historyList.className =
+    //   "bg-white p-2 border rounded-2xl border-[rgba(17,17,17,0.100)]";
+    // historyList.innerHTML = `
+    //       <p class = "text-xl font-bold">$${donateAmount} ${donateCardHistory1}</p>
+    //       <p>Date : ${new Date()}
           
-          `;
-    const historyContainer = document.getElementById("deposite-history");
-    historyContainer.insertBefore(historyList, historyContainer.firstChild);
+    //       `;
+    // const historyContainer = document.getElementById("deposite-history");
+    // historyContainer.insertBefore(historyList, historyContainer.firstChild);
+
+    // Get the donation input value
+
+
   });
 }
 
