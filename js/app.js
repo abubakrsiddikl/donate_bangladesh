@@ -71,12 +71,42 @@ const donateNow3 = document.getElementById("donate-now-3");
 donateNow3.addEventListener("click", function () {
   multiple("donate-now-input-3", "donation-main-balance-3");
 
-  // History function
-  const history = document.getElementById("history");
-  const donationAmountInput = donateNowInputById("donate-now-input-3");
-  const historyInner = history;
-  historyInner.innerHTML = `<div class = "text-xl font-semibold border border-black border-solid mb-3 py-6 px-3 rounded-lg">
-    <p> ${donationAmountInput} Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh</p>
-    </div>
-    `;
+  // history list
+  const donateAmount = document.getElementById('donate-now-input-3').value;
+  const historyList = document.createElement('div');
+  historyList.className = 'bg-white p-2 border rounded-2xl border-black';
+
+  historyList.innerHTML = `
+  <p>${donateAmount} Taka is Donated for famine-2024 at Feni, Bangladesh</p>
+  <p>${new Date().toLocaleDateString()}</p>
+  
+  `
+  const historyContainer = document.getElementById('deposite-history');
+  historyContainer.insertBefore(historyList, historyContainer.firstChild)
+  
+});
+
+
+// history button toggle
+const historyBtn = document.getElementById('history-btn');
+
+historyBtn.addEventListener('click', function(){
+  historyBtn.classList.add('btn', 'bg-primary', 'font-semibold', 'text-xl');
+  
+  const donateBtn = document.getElementById('donate-btn');
+  donateBtn.classList.remove('bg-primary','btn' )
+
+  document.getElementById('donation-option').classList.add('hidden')
+  document.getElementById('history-section').classList.remove('hidden')
+   
+});
+
+// Donate Button toggle
+const donateBtn = document.getElementById('donate-btn');
+donateBtn.addEventListener('click' ,function(){
+  donateBtn.classList.add('btn', 'bg-primary', 'font-semibold', 'text-xl');
+  historyBtn.classList.remove('btn','bg-primary')
+
+  document.getElementById('donation-option').classList.remove('hidden')
+  document.getElementById('history-section').classList.add('hidden')
 });
