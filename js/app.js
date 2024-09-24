@@ -32,7 +32,8 @@ function multiple(id1, id2) {
   console.log(donationAmountInput);
 
   //  input filed validation
-  if (!Number.isNaN(donationAmountInput > 0)) {
+  if (!Number.isNaN(donationAmountInput) && donationAmountInput > 0) {
+    
     //  Get donation balance
     const donationMainBalance = getElementByInnerTextById(id2);
 
