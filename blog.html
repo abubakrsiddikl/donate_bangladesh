@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <!-- link font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- link dasiy ui and tailwind css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- headers starts -->
+    <header id="header" class="sticky top-0 z-50 backdrop-blur-2xl">
+      <div class="bg-[#F9F7F3] p-6">
+        <nav class="w-11/12 mx-auto bg-[#F9F7F3]">
+          <div class="flex justify-between">
+            <!-- nav start -->
+            <div>
+              <a id="home-btn" class="btn bg-[#B4F461]">Home</a>
+            </div>
+            <!-- nav center -->
+            <div
+              class="flex justify-center items-center gap-3 text-2xl font-semibold"
+            >
+              <img src="./assets/logo.png" alt="" />
+              <p class="lg:block hidden">Donate Bangladesh</p>
+            </div>
+            <!-- nav end -->
+            <div class="flex justify-center items-center gap-1">
+              <span><img src="./assets/coin.png" alt="" /></span>
+              <span id="account-balance">5000</span>
+              <span>BDT</span>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- header ends -->
+
+    <!-- main section starts -->
+    <main class="w-11/12 mx-auto mt-7">
+      <details
+        class="collapse bg-white border rounded-md border-[rgba(17,17,17,0.100)] p-1 mb-2"
+      >
+        <summary class="collapse-title text-xl font-medium">
+          What is the document object model(DOM)?
+        </summary>
+        <div class="collapse-content">
+          <p>
+            Document object model(DOM) performs various functions by
+            manipulating HTML and CSS. <br />
+            Example : Determining what happens when you click a button.
+          </p>
+        </div>
+      </details>
+      <details
+        class="collapse bg-white border rounded-md border-[rgba(17,17,17,0.100)] p-1 mb-2"
+      >
+        <summary class="collapse-title text-xl font-medium">
+          How do you select an element from the DOM?
+        </summary>
+        <div class="collapse-content">
+          <p>
+            You can select elements of DOM according to your needs through various functions . Below are some functions as example. 
+            <br>
+            Example : document.getElementByID(),document.getElementByClassName().
+          </p>
+        </div>
+      </details>
+    </main>
+    <!-- main section ends  -->
+
+    <!-- link javascript file -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>

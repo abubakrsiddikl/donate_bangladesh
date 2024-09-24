@@ -89,40 +89,45 @@ function modalOpen(){
 // Donate Now 1 button add event lisetener
 const donateNow1 = document.getElementById("donate-now-1");
 // add event
-donateNow1.addEventListener("click", function () {
-  multiple("donate-now-input-1", "donation-main-balance-1");
-
-  // history functio called
-  // 4. parameter was donate card history string
-  const donateInput = document.getElementById('donate-now-input-1');
-  const donateAmount = donateInput.value.trim();
-  // history list
-  const historyList = document.createElement("div");
-  historyList.className =
-    "bg-white p-2 border rounded-2xl border-[rgba(17,17,17,0.100)]";
-  historyList.innerHTML = `
-        <p class = "text-xl font-bold">${donateAmount} ${donateCardHistory1}</p>
-        <p>Date : ${new Date()}
-        
-        `;
-  const historyContainer = document.getElementById("deposite-history");
-  historyContainer.insertBefore(historyList, historyContainer.firstChild);
-});
+if (donateNow1) {
+  donateNow1.addEventListener("click", function () {
+    multiple("donate-now-input-1", "donation-main-balance-1");
+  
+    // history functio called
+    // 4. parameter was donate card history string
+    const donateInput = document.getElementById('donate-now-input-1');
+    const donateAmount = donateInput.value.trim();
+    // history list
+    const historyList = document.createElement("div");
+    historyList.className =
+      "bg-white p-2 border rounded-2xl border-[rgba(17,17,17,0.100)]";
+    historyList.innerHTML = `
+          <p class = "text-xl font-bold">${donateAmount} ${donateCardHistory1}</p>
+          <p>Date : ${new Date()}
+          
+          `;
+    const historyContainer = document.getElementById("deposite-history");
+    historyContainer.insertBefore(historyList, historyContainer.firstChild);
+  });
+}
 
 // Donate Now 2 button add event lisetener
 const donateNow2 = document.getElementById("donate-now-2");
 // add evnt
-donateNow2.addEventListener("click", function () {
-  multiple("donate-now-input-2", "donation-main-balance-2");
-});
+if (donateNow2) {
+  donateNow2.addEventListener("click", function () {
+    multiple("donate-now-input-2", "donation-main-balance-2");
+  });
+}
 
 // Donate Now 3 button add event lisetener
 const donateNow3 = document.getElementById("donate-now-3");
 // add event
-donateNow3.addEventListener("click", function () {
-  multiple("donate-now-input-3", "donation-main-balance-3");
-
-});
+if (donateNow3) {
+  donateNow3.addEventListener("click", function () {
+    multiple("donate-now-input-3", "donation-main-balance-3");
+  });
+}
 
 
 
@@ -132,22 +137,45 @@ donateNow3.addEventListener("click", function () {
 // history button toggle
 const historyBtn = document.getElementById("history-btn");
 
-historyBtn.addEventListener("click", function () {
-  historyBtn.classList.add("btn", "bg-primary", "font-semibold", "text-xl");
-
-  const donateBtn = document.getElementById("donate-btn");
-  donateBtn.classList.remove("bg-primary", "btn");
-
-  document.getElementById("donation-option").classList.add("hidden");
-  document.getElementById("history-section").classList.remove("hidden");
-});
+if (historyBtn) {
+  historyBtn.addEventListener("click", function () {
+    historyBtn.classList.add("btn", "bg-primary", "font-semibold", "text-xl");
+  
+    const donateBtn = document.getElementById("donate-btn");
+    donateBtn.classList.remove("bg-primary", "btn");
+  
+    document.getElementById("donation-option").classList.add("hidden");
+    document.getElementById("history-section").classList.remove("hidden");
+  });
+}
 
 // Donate Button toggle
 const donateBtn = document.getElementById("donate-btn");
-donateBtn.addEventListener("click", function () {
-  donateBtn.classList.add("btn", "bg-primary", "font-semibold", "text-xl");
-  historyBtn.classList.remove("btn", "bg-primary");
+if (donateBtn) {
+  donateBtn.addEventListener("click", function () {
+    donateBtn.classList.add("btn", "bg-primary", "font-semibold", "text-xl");
+    historyBtn.classList.remove("btn", "bg-primary");
+  
+    document.getElementById("donation-option").classList.remove("hidden");
+    document.getElementById("history-section").classList.add("hidden");
+  });
+}
 
-  document.getElementById("donation-option").classList.remove("hidden");
-  document.getElementById("history-section").classList.add("hidden");
-});
+// challenge part 
+const blogBtn = document.getElementById('blog-btn');
+
+if (blogBtn) {
+    blogBtn.addEventListener('click', function(){
+        window.location.assign("./blog.html")
+        
+      });
+}
+
+
+// home btn
+const homeBtn = document.getElementById('home-btn');
+if (homeBtn) {
+    homeBtn.addEventListener('click', function(){
+        window.location.assign("./index.html");
+      });
+}
