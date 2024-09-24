@@ -64,8 +64,12 @@
       <div
         class="w-11/12 mx-auto flex justify-center items-center gap-3 mt-8 pb-6"
       >
-        <button id="donate-btn" class="btn bg-primary font-semibold text-xl">Donation</button>
-        <button id="history-btn" class="btn font-semibold text-xl">History</button>
+        <button id="donate-btn" class="btn bg-primary font-semibold text-xl">
+          Donation
+        </button>
+        <button id="history-btn" class="btn font-semibold text-xl">
+          History
+        </button>
       </div>
       <!-- 2 button ends -->
     </header>
@@ -226,13 +230,29 @@
       </section>
       <!-- Donate Now 3 section ends -->
 
+      <!-- Modal starts here -->
+      <!-- Open the modal using ID.showModal() method -->
+      
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box text-center">
+          <h3 class="text-3xl font-bold">Congrates!</h3>
+          <p class="pt-4 flex justify-center"><img src="./assets/coin.png" alt=""></p>
+          <p class="py-4">You Have Donated for Humankind</p>
+          <p class="text-2xl text-center font-bold">Successfully</p>
+          <p></p>
+          <div class="modal-action">
+            <form method="dialog">
+                <button class="btn">close confirmation</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      <!-- Modal ends here -->
     </main>
     <!-- main section ends -->
-     <!-- History starts -->
-     <section id="history-section" class="hidden">
-      <div id="deposite-history">
-
-      </div>
+    <!-- History starts -->
+    <section id="history-section" class="hidden w-11/12 mx-auto">
+      <div id="deposite-history"></div>
     </section>
     <!-- History ends -->
 
