@@ -72,5 +72,11 @@ donateNow3.addEventListener("click", function () {
   multiple("donate-now-input-3", "donation-main-balance-3");
 
   // History function
-  
+  const history = document.getElementById("history");
+  const donationAmountInput = donateNowInputById("donate-now-input-3");
+  const historyInner = history;
+  historyInner.innerHTML = `<div class = "text-xl font-semibold border border-black border-solid mb-3 py-6 px-3 rounded-lg">
+    <p> ${donationAmountInput} Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh</p>
+    </div>
+    `;
 });

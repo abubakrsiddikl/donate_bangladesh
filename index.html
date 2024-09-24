@@ -36,37 +36,40 @@
   </head>
   <body class="Lexend">
     <!-- headers starts -->
-    <header class="w-11/12 mx-auto mt-4 sticky top-0 z-50	">
-      <nav>
-        <div class="flex justify-between bg-base-200">
-          <!-- nav start -->
-          <div>
-            <a class="btn bg-primary">Blog</a>
+    <header class="sticky top-0 z-50 backdrop-blur-2xl">
+      <div class="bg-[#F9F7F3] p-6">
+        <nav class="w-11/12 mx-auto bg-[#F9F7F3]">
+          <div class="flex justify-between">
+            <!-- nav start -->
+            <div>
+              <a class="btn bg-primary">Blog</a>
+            </div>
+            <!-- nav center -->
+            <div
+              class="flex justify-center items-center gap-3 text-2xl font-semibold"
+            >
+              <img src="./assets/logo.png" alt="" />
+              <p class="lg:block hidden">Donate Bangladesh</p>
+            </div>
+            <!-- nav end -->
+            <div class="flex justify-center items-center gap-1">
+              <span><img src="./assets/coin.png" alt="" /></span>
+              <span id="account-balance">5000</span>
+              <span>BDT</span>
+            </div>
           </div>
-          <!-- nav center -->
-          <div
-            class="flex justify-center items-center gap-3 text-2xl font-semibold"
-          >
-            <img src="./assets/logo.png" alt="" />
-            <p class="lg:block hidden">Donate Bangladesh</p>
-          </div>
-          <!-- nav end -->
-          <div class="flex justify-center items-center gap-1">
-            <span><img src="./assets/coin.png" alt="" /></span>
-            <span id="account-balance">5000</span>
-            <span>BDT</span>
-          </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
       <!-- 2 button starts -->
-      <div class="flex justify-center items-center gap-3 mt-8">
+      <div
+        class="w-11/12 mx-auto flex justify-center items-center gap-3 mt-8 pb-6"
+      >
         <button class="btn bg-primary font-semibold text-xl">Donation</button>
         <button class="btn font-semibold text-xl">History</button>
       </div>
       <!-- 2 button ends -->
     </header>
     <!-- header ends -->
-
 
     <!-- main section starts  -->
     <main class="w-11/12 mx-auto mt-10">
@@ -138,9 +141,7 @@
                     class="bg-[#1111110D] flex items-center gap-1 p-2 rounded-xl"
                   >
                     <span><img src="./assets/coin.png" alt="" /></span>
-                    <span id="donation-main-balance-2" 
-                      >5000</span
-                    >
+                    <span id="donation-main-balance-2">5000</span>
                     <span>BDT</span>
                   </div>
                 </div>
@@ -149,7 +150,14 @@
                   Donate for Flood Relief in Feni,Bangladesh
                 </h1>
                 <p class="py-6">
-                  The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.
+                  The recent floods in Feni have devastated local communities,
+                  leading to severe disruption and loss. Your generous donation
+                  will help provide immediate aid, including food, clean water,
+                  and medical supplies, to those affected by this calamity.
+                  Together, we can offer crucial support and help rebuild lives
+                  in the aftermath of this disaster. Every contribution counts
+                  towards making a real difference. Please consider donating
+                  today to assist those in urgent need.
                 </p>
                 <input
                   type="text"
@@ -183,9 +191,7 @@
                     class="bg-[#1111110D] flex items-center gap-1 p-2 rounded-xl"
                   >
                     <span><img src="./assets/coin.png" alt="" /></span>
-                    <span id="donation-main-balance-3" 
-                      >5000</span
-                    >
+                    <span id="donation-main-balance-3">5000</span>
                     <span>BDT</span>
                   </div>
                 </div>
@@ -194,7 +200,15 @@
                   Aid for Injured in the Quota Movement
                 </h1>
                 <p class="py-6">
-                  The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.
+                  The recent Quota movement has resulted in numerous injuries
+                  and significant hardship for many individuals. Your support is
+                  crucial in providing medical assistance, rehabilitation, and
+                  necessary supplies to those affected. By contributing, you
+                  help ensure that injured individuals receive the care and
+                  support they need during this challenging time. Every donation
+                  plays a vital role in alleviating their suffering and aiding
+                  in their recovery. Please consider making a donation to
+                  support these brave individuals in their time of need.
                 </p>
                 <input
                   type="text"
@@ -211,13 +225,11 @@
         </div>
       </section>
       <!-- Donate Now 3 section ends -->
-      
-      <!-- History starts -->
-       <section>
-        <div id="history">
 
-        </div>
-       </section>
+      <!-- History starts -->
+      <section>
+        <div id="history"></div>
+      </section>
       <!-- History ends -->
     </main>
     <!-- main section ends -->
