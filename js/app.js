@@ -33,7 +33,6 @@ function multiple(id1, id2) {
 
   //  input filed validation
   if (!Number.isNaN(donationAmountInput) && donationAmountInput > 0) {
-    
     //  Get donation balance
     const donationMainBalance = getElementByInnerTextById(id2);
 
@@ -53,7 +52,7 @@ function multiple(id1, id2) {
         document.getElementById("account-balance");
       mainAccountBalanceUpdate.innerText = mainAccountBalance;
       // modal function called
-      document.getElementById('my_modal_1').showModal()
+      document.getElementById("my_modal_1").showModal();
       // clear input field
       document.getElementById(id1).value = "";
     } else {
@@ -65,26 +64,28 @@ function multiple(id1, id2) {
 }
 
 //  history function called
-function historyStr(id) {
+function historyStr(id, historyString) {
   const donateInput = document.getElementById(id);
-  const donateAmount = donateInput.value.trim();
-  // history list
-  const historyList = document.createElement("div");
-  historyList.className =
-    "bg-white p-2 border rounded-2xl border-[rgba(17,17,17,0.100)]";
-  historyList.innerHTML = `
-        <p class = "text-xl font-bold">${donateAmount} ${donateCardHistory1}</p>
-        <p>Date : ${new Date()}
-        
-        `;
-  const historyContainer = document.getElementById("deposite-history");
-  historyContainer.insertBefore(historyList, historyContainer.firstChild);
+  const donateAmount = parseFloat(donateInput.value.trim());
+  if (!Number.isNaN(donateAmount) && donateAmount > 0) {
+    // history list
+    const historyList = document.createElement("div");
+    historyList.className =
+      "bg-white p-2 border rounded-2xl border-[rgba(17,17,17,0.100)]";
+    historyList.innerHTML = `
+          <p class = "text-xl font-bold">${donateAmount} ${historyString}</p>
+          <p>Date : ${new Date()}
+          
+          `;
+    const historyContainer = document.getElementById("deposite-history");
+    historyContainer.insertBefore(historyList, historyContainer.firstChild);
+  }
 }
 
-// modal function 
-function modalOpen(){
-  const modal = document.getElementById('my_modal_1');
-  onclick="modal.showModal()"
+// modal function
+function modalOpen() {
+  const modal = document.getElementById("my_modal_1");
+  onclick = "modal.showModal()";
 }
 
 // Donate Now 1 button add event lisetener
@@ -92,27 +93,8 @@ const donateNow1 = document.getElementById("donate-now-1");
 // add event
 if (donateNow1) {
   donateNow1.addEventListener("click", function () {
+    historyStr("donate-now-input-1", donateCardHistory1);
     multiple("donate-now-input-1", "donation-main-balance-1");
-  
-    // history functio called
-    // 4. parameter was donate card history string
-    // const donateInput = document.getElementById('donate-now-input-1');
-    // const donateAmount = donateInput.value.trim();
-    // // history list
-    // const historyList = document.createElement("div");
-    // historyList.className =
-    //   "bg-white p-2 border rounded-2xl border-[rgba(17,17,17,0.100)]";
-    // historyList.innerHTML = `
-    //       <p class = "text-xl font-bold">$${donateAmount} ${donateCardHistory1}</p>
-    //       <p>Date : ${new Date()}
-          
-    //       `;
-    // const historyContainer = document.getElementById("deposite-history");
-    // historyContainer.insertBefore(historyList, historyContainer.firstChild);
-
-    // Get the donation input value
-
-
   });
 }
 
@@ -121,6 +103,7 @@ const donateNow2 = document.getElementById("donate-now-2");
 // add evnt
 if (donateNow2) {
   donateNow2.addEventListener("click", function () {
+    historyStr("donate-now-input-2", donateCardHistory2);
     multiple("donate-now-input-2", "donation-main-balance-2");
   });
 }
@@ -130,14 +113,10 @@ const donateNow3 = document.getElementById("donate-now-3");
 // add event
 if (donateNow3) {
   donateNow3.addEventListener("click", function () {
+    historyStr("donate-now-input-3", donateCardHistory3);
     multiple("donate-now-input-3", "donation-main-balance-3");
   });
 }
-
-
-
-
-
 
 // history button toggle
 const historyBtn = document.getElementById("history-btn");
@@ -145,10 +124,10 @@ const historyBtn = document.getElementById("history-btn");
 if (historyBtn) {
   historyBtn.addEventListener("click", function () {
     historyBtn.classList.add("btn", "bg-primary", "font-semibold", "text-xl");
-  
+
     const donateBtn = document.getElementById("donate-btn");
     donateBtn.classList.remove("bg-primary", "btn");
-  
+
     document.getElementById("donation-option").classList.add("hidden");
     document.getElementById("history-section").classList.remove("hidden");
   });
@@ -160,27 +139,25 @@ if (donateBtn) {
   donateBtn.addEventListener("click", function () {
     donateBtn.classList.add("btn", "bg-primary", "font-semibold", "text-xl");
     historyBtn.classList.remove("btn", "bg-primary");
-  
+
     document.getElementById("donation-option").classList.remove("hidden");
     document.getElementById("history-section").classList.add("hidden");
   });
 }
 
-// challenge part 
-const blogBtn = document.getElementById('blog-btn');
+// challenge part
+const blogBtn = document.getElementById("blog-btn");
 
 if (blogBtn) {
-    blogBtn.addEventListener('click', function(){
-        window.location.assign("./blog.html")
-        
-      });
+  blogBtn.addEventListener("click", function () {
+    window.location.assign("./blog.html");
+  });
 }
 
-
 // home btn
-const homeBtn = document.getElementById('home-btn');
+const homeBtn = document.getElementById("home-btn");
 if (homeBtn) {
-    homeBtn.addEventListener('click', function(){
-        window.location.assign("./index.html");
-      });
+  homeBtn.addEventListener("click", function () {
+    window.location.assign("./index.html");
+  });
 }
