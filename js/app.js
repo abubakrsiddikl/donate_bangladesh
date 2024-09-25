@@ -67,18 +67,20 @@ function multiple(id1, id2) {
 function historyStr(id, historyString) {
   const donateInput = document.getElementById(id);
   const donateAmount = parseFloat(donateInput.value.trim());
+  const accountBalance = getElementByInnerTextById("account-balance");
   if (!Number.isNaN(donateAmount) && donateAmount > 0) {
-    // history list
-    const historyList = document.createElement("div");
-    historyList.className =
-      "bg-white p-2 border rounded-2xl border-[rgba(17,17,17,0.100)]";
-    historyList.innerHTML = `
+    if (accountBalance >= donateAmount) {
+      const historyList = document.createElement("div");
+      historyList.className =
+        "bg-white p-2 border rounded-2xl border-[rgba(17,17,17,0.100)] mt-3";
+      historyList.innerHTML = `
           <p class = "text-xl font-bold">${donateAmount} ${historyString}</p>
           <p>Date : ${new Date()}
           
           `;
-    const historyContainer = document.getElementById("deposite-history");
-    historyContainer.insertBefore(historyList, historyContainer.firstChild);
+      const historyContainer = document.getElementById("deposite-history");
+      historyContainer.insertBefore(historyList, historyContainer.firstChild);
+    }
   }
 }
 
